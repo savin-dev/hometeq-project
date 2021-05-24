@@ -22,14 +22,26 @@ while ($arrayp = mysqli_fetch_array($exeSQL)) {
     echo "<tr>";
     echo "<td style='border: 0px'>";
     //display the small image whose name is contained in the array
+    echo "<a href=prodbuy.php?u_prod_id=" . $arrayp['prodId'] . ">";
     echo "<img src=images/" . $arrayp['prodPicNameSmall'] . " height=200 width=200>";
     echo "</td>";
     echo "<td style='border: 0px'>";
     echo "<p><h5>" . $arrayp['prodName'] . "</h5>"; //display product name as contained in the array
     echo "</td>";
     echo "</tr>";
+    echo "<tr>";
+    echo "<td style='border: 0px'>";
+    echo "<p>" . $arrayp['prodDescripShort'] . "</p>";
+    echo "</td>";
+    echo "</tr>";
+    echo "<td style='border: 0px'>";
+    echo "<p>" . $arrayp['prodPrice'] . "</p>";
+    echo "</a>";
+    echo "</td>";
+    echo "</tr>";
 }
 echo "</table>";
 
 include("footfile.html"); //include head layout
+
 echo "</body>";
